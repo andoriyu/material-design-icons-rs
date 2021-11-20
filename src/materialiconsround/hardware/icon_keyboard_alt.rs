@@ -1,0 +1,45 @@
+
+pub struct IconKeyboardAlt {
+  props: crate::Props,
+}
+
+impl yew::Component for IconKeyboardAlt {
+ type Properties = crate::Props;
+    type Message = ();
+
+    fn create(props: Self::Properties, _: yew::prelude::ComponentLink<Self>) -> Self
+    {
+        Self { props }
+    }
+
+    fn update(&mut self, _: Self::Message) -> yew::prelude::ShouldRender
+    {
+        true
+    }
+
+    fn change(&mut self, _: Self::Properties) -> yew::prelude::ShouldRender
+    {
+        false
+    }
+
+    fn view(&self) -> yew::prelude::Html
+    {
+        yew::prelude::html! {
+            <svg
+                class=self.props.class.unwrap_or("")
+                width=self.props.size.unwrap_or(24).to_string()
+                height=self.props.size.unwrap_or(24).to_string()
+                viewBox="0 0 24 24"
+                fill=self.props.fill.unwrap_or("none")
+                stroke=self.props.color.unwrap_or("currentColor")
+                stroke-width=self.props.stroke_width.unwrap_or(2).to_string()
+                stroke-linecap=self.props.stroke_linecap.unwrap_or("round")
+                stroke-linejoin=self.props.stroke_linejoin.unwrap_or("round")
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24" y="0"/></g><g><g><path d="M21,4H3C1.9,4,1,4.9,1,6v13c0,1.1,0.9,2,2,2h18c1.1,0,2-0.9,2-2V6C23,4.9,22.1,4,21,4z M7,12v2H5v-2H7z M5,10V8h2v2H5z M11,12v2H9v-2H11z M9,10V8h2v2H9z M16,16.5L16,16.5c0,0.28-0.22,0.5-0.5,0.5h-7C8.22,17,8,16.78,8,16.5l0,0 C8,16.22,8.22,16,8.5,16h7C15.78,16,16,16.22,16,16.5z M15,12v2h-2v-2H15z M13,10V8h2v2H13z M17,14v-2h2v2H17z M19,10h-2V8h2V10z"/></g></g></svg>
+            </svg>
+        }
+    }
+}
+
+

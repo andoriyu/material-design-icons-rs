@@ -1,0 +1,45 @@
+
+pub struct IconPartyMode {
+  props: crate::Props,
+}
+
+impl yew::Component for IconPartyMode {
+ type Properties = crate::Props;
+    type Message = ();
+
+    fn create(props: Self::Properties, _: yew::prelude::ComponentLink<Self>) -> Self
+    {
+        Self { props }
+    }
+
+    fn update(&mut self, _: Self::Message) -> yew::prelude::ShouldRender
+    {
+        true
+    }
+
+    fn change(&mut self, _: Self::Properties) -> yew::prelude::ShouldRender
+    {
+        false
+    }
+
+    fn view(&self) -> yew::prelude::Html
+    {
+        yew::prelude::html! {
+            <svg
+                class=self.props.class.unwrap_or("")
+                width=self.props.size.unwrap_or(24).to_string()
+                height=self.props.size.unwrap_or(24).to_string()
+                viewBox="0 0 24 24"
+                fill=self.props.fill.unwrap_or("none")
+                stroke=self.props.color.unwrap_or("currentColor")
+                stroke-width=self.props.stroke_width.unwrap_or(2).to_string()
+                stroke-linecap=self.props.stroke_linecap.unwrap_or("round")
+                stroke-linejoin=self.props.stroke_linejoin.unwrap_or("round")
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 4h-3.17L15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h4.05l.59-.65L9.88 4h4.24l1.24 1.35.59.65H20v12zM9 12c0-1.66 1.34-3 3-3h3.98c-.92-1.21-2.35-2-3.98-2-2.76 0-5 2.24-5 5 0 .34.04.68.1 1h2.08c-.11-.31-.18-.65-.18-1zm6 0c0 1.66-1.34 3-3 3H8.02c.92 1.21 2.35 2 3.98 2 2.76 0 5-2.24 5-5 0-.34-.03-.68-.1-1h-2.08c.11.31.18.65.18 1z"/></svg>
+            </svg>
+        }
+    }
+}
+
+

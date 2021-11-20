@@ -1,0 +1,16 @@
+[package]
+name = "material_design_icons"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["materialicons", "materialiconsoutlined", "materialiconsround", "materialiconssharp", "materialiconstwotone"]
+materialicons = []
+materialiconsoutlined = []
+materialiconsround = []
+materialiconssharp = []
+materialiconstwotone = []
+[dependencies]
+yew = "0.18"

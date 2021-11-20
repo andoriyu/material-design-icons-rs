@@ -1,0 +1,45 @@
+
+pub struct IconLayersClear {
+  props: crate::Props,
+}
+
+impl yew::Component for IconLayersClear {
+ type Properties = crate::Props;
+    type Message = ();
+
+    fn create(props: Self::Properties, _: yew::prelude::ComponentLink<Self>) -> Self
+    {
+        Self { props }
+    }
+
+    fn update(&mut self, _: Self::Message) -> yew::prelude::ShouldRender
+    {
+        true
+    }
+
+    fn change(&mut self, _: Self::Properties) -> yew::prelude::ShouldRender
+    {
+        false
+    }
+
+    fn view(&self) -> yew::prelude::Html
+    {
+        yew::prelude::html! {
+            <svg
+                class=self.props.class.unwrap_or("")
+                width=self.props.size.unwrap_or(24).to_string()
+                height=self.props.size.unwrap_or(24).to_string()
+                viewBox="0 0 24 24"
+                fill=self.props.fill.unwrap_or("none")
+                stroke=self.props.color.unwrap_or("currentColor")
+                stroke-width=self.props.stroke_width.unwrap_or(2).to_string()
+                stroke-linecap=self.props.stroke_linecap.unwrap_or("round")
+                stroke-linejoin=self.props.stroke_linejoin.unwrap_or("round")
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 13.47l.67-.53-5.02-5.02L6.26 9zm0-8.94l-1.17.91 5.02 5.03L17.74 9z" opacity=".3"/><path d="M12 4.53L17.74 9l-1.89 1.47 1.43 1.42L21 9l-9-7-2.59 2.02 1.42 1.42zm9 9.54l-1.63-1.27-.67.52 1.43 1.43zM3.41.86L2 2.27l4.22 4.22L3 9l9 7 2.1-1.63 1.42 1.42-3.53 2.75-7.37-5.73L3 14.07l9 7 4.95-3.85L20.73 21l1.41-1.41L3.41.86zM12 13.47L6.26 9l1.39-1.08 5.02 5.02-.67.53z"/></svg>
+            </svg>
+        }
+    }
+}
+
+

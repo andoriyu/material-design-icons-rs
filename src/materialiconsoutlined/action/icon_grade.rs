@@ -1,0 +1,45 @@
+
+pub struct IconGrade {
+  props: crate::Props,
+}
+
+impl yew::Component for IconGrade {
+ type Properties = crate::Props;
+    type Message = ();
+
+    fn create(props: Self::Properties, _: yew::prelude::ComponentLink<Self>) -> Self
+    {
+        Self { props }
+    }
+
+    fn update(&mut self, _: Self::Message) -> yew::prelude::ShouldRender
+    {
+        true
+    }
+
+    fn change(&mut self, _: Self::Properties) -> yew::prelude::ShouldRender
+    {
+        false
+    }
+
+    fn view(&self) -> yew::prelude::Html
+    {
+        yew::prelude::html! {
+            <svg
+                class=self.props.class.unwrap_or("")
+                width=self.props.size.unwrap_or(24).to_string()
+                height=self.props.size.unwrap_or(24).to_string()
+                viewBox="0 0 24 24"
+                fill=self.props.fill.unwrap_or("none")
+                stroke=self.props.color.unwrap_or("currentColor")
+                stroke-width=self.props.stroke_width.unwrap_or(2).to_string()
+                stroke-linecap=self.props.stroke_linecap.unwrap_or("round")
+                stroke-linejoin=self.props.stroke_linejoin.unwrap_or("round")
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>
+            </svg>
+        }
+    }
+}
+
+

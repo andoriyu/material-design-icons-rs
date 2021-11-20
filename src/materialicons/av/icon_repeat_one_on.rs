@@ -1,0 +1,45 @@
+
+pub struct IconRepeatOneOn {
+  props: crate::Props,
+}
+
+impl yew::Component for IconRepeatOneOn {
+ type Properties = crate::Props;
+    type Message = ();
+
+    fn create(props: Self::Properties, _: yew::prelude::ComponentLink<Self>) -> Self
+    {
+        Self { props }
+    }
+
+    fn update(&mut self, _: Self::Message) -> yew::prelude::ShouldRender
+    {
+        true
+    }
+
+    fn change(&mut self, _: Self::Properties) -> yew::prelude::ShouldRender
+    {
+        false
+    }
+
+    fn view(&self) -> yew::prelude::Html
+    {
+        yew::prelude::html! {
+            <svg
+                class=self.props.class.unwrap_or("")
+                width=self.props.size.unwrap_or(24).to_string()
+                height=self.props.size.unwrap_or(24).to_string()
+                viewBox="0 0 24 24"
+                fill=self.props.fill.unwrap_or("none")
+                stroke=self.props.color.unwrap_or("currentColor")
+                stroke-width=self.props.stroke_width.unwrap_or(2).to_string()
+                stroke-linecap=self.props.stroke_linecap.unwrap_or("round")
+                stroke-linejoin=self.props.stroke_linejoin.unwrap_or("round")
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M21 1H3c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zM7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4zm-4-2V9h-1l-2 1v1h1.5v4H13z" fill-rule="evenodd"/></svg>
+            </svg>
+        }
+    }
+}
+
+
